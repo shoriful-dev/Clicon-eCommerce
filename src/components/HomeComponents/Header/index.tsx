@@ -20,7 +20,7 @@ const Header: React.FC = () => {
               <span className="body-xl-600 text-gray-00">OFF</span>
             </div>
             <div className="flex items-center justify-end">
-              <Button className='bg-warning-500 px-10! py-5 rounded cursor-pointer hover:bg-warning-400 transition-all transform'>
+              <Button className='bg-warning-500 px-10! py-5 rounded cursor-pointer hover:bg-warning-400 transition-all transform duration-300'>
                 <div className="flex items-center gap-x-1">
                   <span className="text-gray-900 heading5">Shop Now</span>
                   <span className='text-gray-900 inline-block mt-1 font-bold'>{icons.rightarrow}</span>

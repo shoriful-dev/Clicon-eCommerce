@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '../../CommonComponents/Container';
 import { assets } from '../../../helpers/AssetProvider';
 
-const Menu = () => {
+const Menu: React.FC = () => {
   return (
     <>
       <div className="bg-secondary-700 py-4! border-t border-t-gray-500">

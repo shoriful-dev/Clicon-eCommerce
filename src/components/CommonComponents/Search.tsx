@@ -1,11 +1,16 @@
 import React from 'react';
 
-const Search: React.FC = () => {
+type PropTypes = {
+  children: React.ReactNode;
+  className?: string;
+};
+
+const Search: React.FC<PropTypes> = ({ children, className }) => {
   return (
-    <div>
-      <input type="text" name="" id="" />
+    <div className={className}>
+      {children}
     </div>
-  )
-}
+  );
+};
 
 export default Search;

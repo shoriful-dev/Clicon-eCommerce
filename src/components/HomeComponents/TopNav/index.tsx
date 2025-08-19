@@ -13,7 +13,7 @@ const TopNav: React.FC = () => {
   ]);
 
   return (
-    <div className="bg-secondary-700 py-3!">
+    <div className="bg-secondary-700 py-4!">
       <Container>
         <div className="grid grid-cols-2 items-center">
           <h2 className="body-small-400 text-gray-00">

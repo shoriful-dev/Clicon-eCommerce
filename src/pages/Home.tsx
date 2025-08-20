@@ -3,6 +3,7 @@ import Header from '../components/HomeComponents/Header/index';
 import TopNav from '../components/HomeComponents/TopNav';
 import Menu from '../components/HomeComponents/Menu/Index';
 import Category from '../components/HomeComponents/Category';
+import Banner from '../components/HomeComponents/Banner';
 
 const Home: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ const Home: React.FC = () => {
         <div className="shadow">
           <Category />
         </div>
+        <Banner />
       </div>
     </>
   );

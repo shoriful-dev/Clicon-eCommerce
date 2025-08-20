@@ -43,4 +43,4 @@ const TopNav: React.FC = () => {
   );
 };
 
-export default TopNav;
+export default React.memo(TopNav) || TopNav;

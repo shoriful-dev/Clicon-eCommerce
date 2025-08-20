@@ -1,6 +1,6 @@
 import { FaPinterestP, FaReddit, FaRegHeart } from 'react-icons/fa';
 import { FaFacebook, FaInstagram, FaTwitter, FaUserAstronaut, FaYoutube, FaArrowsRotate, FaHeadphones } from 'react-icons/fa6';
-import { IoIosHelpCircleOutline } from 'react-icons/io';
+import { IoIosArrowDown, IoIosArrowUp, IoIosHelpCircleOutline } from 'react-icons/io';
 import { IoIosSearch } from 'react-icons/io';
 import { IoLocationOutline } from 'react-icons/io5';
 import { LuPhoneCall, LuShoppingCart } from 'react-icons/lu';
@@ -27,4 +27,6 @@ export const icons: Icons = {
   help: <IoIosHelpCircleOutline />,
   call: <LuPhoneCall />,
   rightarrow: <BsArrowRight />,
+  downarrow: <IoIosArrowDown />,
+  uparrow: <IoIosArrowUp />,
 };

@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/HomeComponents/Header/index';
 import TopNav from '../components/HomeComponents/TopNav';
 import Menu from '../components/HomeComponents/Menu/Index';
+import Category from '../components/HomeComponents/Category';
 
 const Home: React.FC = () => {
   return (
@@ -10,6 +11,9 @@ const Home: React.FC = () => {
         <Header />
         <TopNav />
         <Menu />
+        <div className="shadow">
+          <Category />
+        </div>
       </div>
     </>
   );

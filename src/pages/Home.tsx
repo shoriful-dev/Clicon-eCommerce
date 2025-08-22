@@ -4,6 +4,7 @@ import TopNav from '../components/HomeComponents/TopNav';
 import Menu from '../components/HomeComponents/Menu/Index';
 import Category from '../components/HomeComponents/Category';
 import Banner from '../components/HomeComponents/Banner';
+import Features from '../components/HomeComponents/Features';
 
 const Home: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const Home: React.FC = () => {
           <Category />
         </div>
         <Banner />
+        <Features />
       </div>
     </>
   );

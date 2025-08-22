@@ -43,4 +43,4 @@ const Slider: React.FC<propsType> = ({
   );
 };
 
-export default Slider;
+export default React.memo(Slider);

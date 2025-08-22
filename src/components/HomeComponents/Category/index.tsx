@@ -87,4 +87,4 @@ const Category: React.FC = () => {
   );
 }
 
-export default React.memo(Category) || Category;
+export default React.memo(Category);

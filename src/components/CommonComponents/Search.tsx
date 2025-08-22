@@ -13,4 +13,4 @@ const Search: React.FC<PropTypes> = ({ children, className }) => {
   );
 };
 
-export default React.memo(Search) || Search;
+export default React.memo(Search);

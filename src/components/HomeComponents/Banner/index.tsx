@@ -45,4 +45,4 @@ const Banner: React.FC = () => {
   );
 }
 
-export default React.memo(Banner) || Banner;
+export default React.memo(Banner);

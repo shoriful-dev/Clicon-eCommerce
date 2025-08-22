@@ -1,9 +1,46 @@
 import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, EffectCube, A11y, Autoplay, EffectCards, EffectCoverflow } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
-const Slider = () => {
-  return (
-    <div>Slider</div>
-  )
+interface propsType {
+  children: React.ReactNode;
+  animationStyle: string;
+  paginationActive: boolean;
 }
+
+const Slider: React.FC<propsType> = ({
+  children,
+  animationStyle = 'cube',
+  paginationActive,
+}) => {
+  return (
+    <div>
+      <Swiper
+        modules={[
+          EffectCube,
+          A11y,
+          Autoplay,
+          EffectCards,
+          ...(paginationActive ? [Pagination] : []),
+          EffectCoverflow,
+        ]}
+        effect={animationStyle}
+        autoplay={{ delay: 2000, disableOnInteraction: false }}
+        spaceBetween={50}
+        slidesPerView={1}
+        pagination={{ clickable: true }}
+        scrollbar={{ draggable: true }}
+        onSwiper={swiper => console.log(swiper)}
+        onSlideChange={() => console.log('slide change')}
+      >
+        {[1, 2, 3, 4, 5].map(item => (
+          <SwiperSlide key={item}>{children}</SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+};
 
 export default Slider;

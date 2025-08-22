@@ -16,8 +16,12 @@ const Home: React.FC = () => {
         <div className="shadow">
           <Category />
         </div>
-        <Banner />
-        <Features />
+        <div className="mb-20!">
+          <Banner />
+        </div>
+        <div className="mt-20!">
+          <Features />
+        </div>
       </div>
     </>
   );

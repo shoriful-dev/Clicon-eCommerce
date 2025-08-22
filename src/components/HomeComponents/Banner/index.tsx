@@ -9,7 +9,7 @@ const Banner: React.FC = () => {
       <Container>
         <div className="grid grid-cols-[2fr_1fr] gap-x-5">
           <div className="w-[1000px] h-[500px] rounded">
-            <Slider animationStyle="cube" paginationActive={true}>
+            <Slider animationStyle="coverflow" paginationActive={false}>
               <img
                 src={assets.bannerSlider1}
                 alt={'Banner One'}
@@ -29,7 +29,7 @@ const Banner: React.FC = () => {
             </div>
             <div>
               <div className="w-[500px] h-[250px] rounded mt-5!">
-                <Slider animationStyle="coverflow" paginationActive={false}>
+                <Slider animationStyle="slide" paginationActive={false}>
                   <img
                     src={assets.bannerSlider3}
                     alt={'Banner Two'}

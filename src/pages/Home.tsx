@@ -5,6 +5,7 @@ import Menu from '../components/HomeComponents/Menu/Index';
 import Category from '../components/HomeComponents/Category';
 import Banner from '../components/HomeComponents/Banner';
 import Features from '../components/HomeComponents/Features';
+import ShobByCategory from '../components/HomeComponents/ShobByCategory';
 
 const Home: React.FC = () => {
   return (
@@ -22,6 +23,7 @@ const Home: React.FC = () => {
         <div className="mt-20!">
           <Features />
         </div>
+        <ShobByCategory />
       </div>
     </>
   );

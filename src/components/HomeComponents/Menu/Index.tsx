@@ -38,4 +38,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default React.memo(Menu) || Menu;
+export default React.memo(Menu);

@@ -41,7 +41,7 @@ const Features: React.FC = () => {
     <>
       <div>
         <Container>
-          <div className="border border-gray-100 px-10! py-7! rounded grid grid-cols-4 gap-x-5 mb-20!">
+          <div className="border border-gray-100 px-10! py-7! rounded grid grid-cols-4 gap-x-5">
             {features?.map(item => (
               <div
                 className={

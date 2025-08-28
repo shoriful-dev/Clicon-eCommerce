@@ -1,5 +1,5 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper } from 'swiper/react';
 import {
   Pagination,
   EffectCube,
@@ -7,6 +7,7 @@ import {
   Autoplay,
   EffectCards,
   EffectCoverflow,
+  EffectFade,
 } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -30,10 +31,11 @@ const Slider: React.FC<propsType> = ({
           A11y,
           Autoplay,
           EffectCards,
-          ...(paginationActive ? [Pagination] : []),
           EffectCoverflow,
+          EffectFade,
+          ...(paginationActive ? [Pagination] : []),
         ]}
-        effect={animationStyle}
+        effect={animationStyle || 'fade'}
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         spaceBetween={50}
         slidesPerView={1}

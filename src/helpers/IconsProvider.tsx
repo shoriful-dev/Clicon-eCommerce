@@ -4,7 +4,7 @@ import { IoIosArrowDown, IoIosArrowUp, IoIosHelpCircleOutline } from 'react-icon
 import { IoIosSearch } from 'react-icons/io';
 import { IoLocationOutline } from 'react-icons/io5';
 import { LuPhoneCall, LuShoppingCart } from 'react-icons/lu';
-import { BsArrowRight } from 'react-icons/bs';
+import { BsArrowLeft, BsArrowRight } from 'react-icons/bs';
 
 type Icons = {
   [key: string]: React.ReactNode;
@@ -27,6 +27,7 @@ export const icons: Icons = {
   help: <IoIosHelpCircleOutline />,
   call: <LuPhoneCall />,
   rightarrow: <BsArrowRight />,
+  leftarrow: <BsArrowLeft />,
   downarrow: <IoIosArrowDown />,
   uparrow: <IoIosArrowUp />,
 };

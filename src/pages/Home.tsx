@@ -6,6 +6,7 @@ import Category from '../components/HomeComponents/Category';
 import Banner from '../components/HomeComponents/Banner';
 import Features from '../components/HomeComponents/Features';
 import ShobByCategory from '../components/HomeComponents/ShobByCategory';
+import FeaturesProduct from '../components/HomeComponents/FeaturesProduct';
 
 const Home: React.FC = () => {
   return (
@@ -24,6 +25,7 @@ const Home: React.FC = () => {
           <Features />
         </div>
         <ShobByCategory />
+        <FeaturesProduct />
       </div>
     </>
   );

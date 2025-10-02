@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { assets } from '../../../helpers/AssetProvider';
 import Container from '../../CommonComponents/Container';
+import type { featureProduct } from '../../../types/fearuresProduct';
+import { icons } from '../../../helpers/IconsProvider';
 
 const FeaturesProduct: React.FC = () => {
-  const [featuresProductList] = useState([
+  const [featuresProductList] = useState<featureProduct[]>([
     {
       id: 1,
       name: 'All Product',
@@ -45,13 +47,21 @@ const FeaturesProduct: React.FC = () => {
             <div className="grid grid-cols-[1fr_1fr]">
               <h2 className="heading3 text-gray-900">Featured Products</h2>
               <div className="justify-self-end">
-                <ul className='flex items-center gap-x-5'>
-                  <li>All Product</li>
-                  <li>Smart Phone</li>
-                  <li>Laptop</li>
-                  <li>Headphone</li>
-                  <li>TV</li>
-                </ul>
+                <div className="flex items-center gap-x-8">
+                  <ul className="flex items-center gap-x-4">
+                    {featuresProductList?.map(item => (
+                      <li
+                        key={item.id}
+                        className="body-small-400 text-gray-600 customStyle"
+                      >
+                        {item.name}
+                      </li>
+                    ))}
+                  </ul>
+                  <button className="flex items-center gap-x-2 text-primary-500">
+                    Browse All Product <span className='mt-1! body-small-600 text-[17px]!'>{icons.rightarrow}</span>
+                  </button>
+                </div>
               </div>
             </div>
             <div className=""></div>

@@ -68,8 +68,10 @@ const FeaturesProduct: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="">
-              <Product/>
+            <div className="grid grid-cols-4 gap-4">
+              {[...new Array(12)].map((_, index) => (
+                <Product key={index}/>
+              ))}
             </div>
           </div>
         </div>

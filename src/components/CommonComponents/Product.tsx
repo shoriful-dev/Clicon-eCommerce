@@ -8,13 +8,13 @@ type fearuresProductProp = {
 
 const Product = ({ key }: fearuresProductProp) => {
   return (
-    <div key={key}>
-      <div className="max-w-[300px] p-4! border border-gray-100 rounded relative">
+    <div key={key} className='h-full'>
+      <div className="max-w-[300px] p-4! border border-gray-100 rounded relative shadow">
         <div className="flex items-center justify-center">
           <img
             src={assets.mobile}
             alt="Mobile"
-            className="w-full h-full object-center"
+            className="max-w-[202px] max-h-[172px] object-cover"
           />
         </div>
         <div className="bg-gray-00 pt-4!">

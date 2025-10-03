@@ -36,15 +36,15 @@ const FeaturesProduct: React.FC = () => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-[1fr_3fr] py-10! gap-x-5">
-          <div className="">
+        <div className="grid grid-cols-[1fr_3.7fr] h-[716px] gap-x-6">
+          <div className='h-full'>
             <img
               src={assets.FeatureProductLeft}
               alt="Feature Left Banner Image"
-              className="w-full h-full object-cover"
+              className="h-full w-full object-center rounded"
             />
           </div>
-          <div className="grid grid-rows-[0.5fr_4fr] rounded border">
+          <div className="grid grid-rows-[8%_90%] rounded! h-full">
             <div className="grid grid-cols-[1fr_1fr]">
               <h2 className="heading3 text-gray-900">Featured Products</h2>
               <div className="justify-self-end">
@@ -69,7 +69,7 @@ const FeaturesProduct: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4">
-              {[...new Array(12)].map((_, index) => (
+              {[...new Array(8)].map((_, index) => (
                 <Product key={index}/>
               ))}
             </div>

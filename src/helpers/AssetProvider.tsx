@@ -14,6 +14,7 @@ import shopImage4 from '../assets/homepageAssets/shopImage4.png';
 import shopImage5 from '../assets/homepageAssets/shopImage5.png';
 import shopImage6 from '../assets/homepageAssets/shopImage6.png';
 import FeatureProductLeft from '../assets/homepageAssets/FeatureProduct.png';
+import mobile from '../assets/homepageAssets/mobile.png';
 
 type Assets = {
   [key: string]: string;
@@ -36,4 +37,5 @@ export const assets: Assets = {
   shopImage5,
   shopImage6,
   FeatureProductLeft,
+  mobile,
 };

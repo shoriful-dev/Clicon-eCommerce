@@ -3,6 +3,7 @@ import { assets } from '../../../helpers/AssetProvider';
 import Container from '../../CommonComponents/Container';
 import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
+import Product from '../../CommonComponents/Product';
 
 const FeaturesProduct: React.FC = () => {
   const [featuresProductList] = useState<featureProduct[]>([
@@ -67,7 +68,9 @@ const FeaturesProduct: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className=""></div>
+            <div className="">
+              <Product/>
+            </div>
           </div>
         </div>
       </Container>

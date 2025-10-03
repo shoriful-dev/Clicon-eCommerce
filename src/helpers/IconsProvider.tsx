@@ -1,4 +1,4 @@
-import { FaPinterestP, FaReddit, FaRegHeart } from 'react-icons/fa';
+import { FaPinterestP, FaReddit, FaRegHeart, FaRegStar, FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { FaFacebook, FaInstagram, FaTwitter, FaUserAstronaut, FaYoutube, FaArrowsRotate, FaHeadphones } from 'react-icons/fa6';
 import { IoIosArrowDown, IoIosArrowUp, IoIosHelpCircleOutline } from 'react-icons/io';
 import { IoIosSearch } from 'react-icons/io';
@@ -30,4 +30,7 @@ export const icons: Icons = {
   leftarrow: <BsArrowLeft />,
   downarrow: <IoIosArrowDown />,
   uparrow: <IoIosArrowUp />,
+  emptyStar: <FaRegStar />,
+  fillStar: <FaStar />,
+  halfStar: <FaStarHalfAlt />,
 };

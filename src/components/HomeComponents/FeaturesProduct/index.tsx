@@ -59,7 +59,10 @@ const FeaturesProduct: React.FC = () => {
                     ))}
                   </ul>
                   <button className="flex items-center gap-x-2 text-primary-500">
-                    Browse All Product <span className='mt-1! body-small-600 text-[17px]!'>{icons.rightarrow}</span>
+                    Browse All Product{' '}
+                    <span className="mt-1! body-small-600 text-[17px]!">
+                      {icons.rightarrow}
+                    </span>
                   </button>
                 </div>
               </div>

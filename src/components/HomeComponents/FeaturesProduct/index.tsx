@@ -35,7 +35,9 @@ const FeaturesProduct: React.FC = () => {
       slug: 'tv',
     },
   ]);
-  const query = useQuery({ queryKey: ['todos'], queryFn: getTodos });
+  const query = useQuery({ queryKey: ['featureProducts'], queryFn: () => {
+
+  } });
   return (
     <>
       <Container>

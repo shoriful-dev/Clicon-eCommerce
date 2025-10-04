@@ -4,8 +4,10 @@ import Container from '../../CommonComponents/Container';
 import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
 import Product from '../../CommonComponents/Product';
+import { useQuery, useQueryClient } from '@tanstack/react-query';
 
 const FeaturesProduct: React.FC = () => {
+  const queryClient = useQueryClient();
   const [featuresProductList] = useState<featureProduct[]>([
     {
       id: 1,
@@ -33,6 +35,7 @@ const FeaturesProduct: React.FC = () => {
       slug: 'tv',
     },
   ]);
+  const query = useQuery({ queryKey: ['todos'], queryFn: getTodos });
   return (
     <>
       <Container>

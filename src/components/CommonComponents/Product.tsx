@@ -3,12 +3,13 @@ import { assets } from '../../helpers/AssetProvider';
 import { icons } from '../../helpers/IconsProvider';
 
 type fearuresProductProp = {
-  key: number
-}
+  status: { isPending: boolean, isError: boolean, data: any, error: any };
+};
 
-const Product = ({ key }: fearuresProductProp) => {
+const Product = ({ status }: fearuresProductProp) => {
+  console.log(status)
   return (
-    <div key={key} className='h-full'>
+    <div className='h-full'>
       <div className="max-w-[300px] p-4! border border-gray-100 rounded relative shadow">
         <div className="flex items-center justify-center">
           <img

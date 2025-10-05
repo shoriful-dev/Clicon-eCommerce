@@ -5,6 +5,7 @@ import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
 import Product from '../../CommonComponents/Product';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { GetFeatureProduct } from '../../../api/FeatureProduct';
 
 const FeaturesProduct: React.FC = () => {
   const queryClient = useQueryClient();
@@ -35,10 +36,11 @@ const FeaturesProduct: React.FC = () => {
       slug: 'tv',
     },
   ]);
-  const query = useQuery({ queryKey: ['featureProduct'], queryFn: async () => {
-    return await fetch('https://dummyjson.com/products').then((res) => res.json());
-  }});
-  console.log(query.data)
+  const { isPending, isError, data, error } = useQuery({
+    queryKey: ['featureProduct'],
+    queryFn: GetFeatureProduct,
+  });
+  console.log(data);
   return (
     <>
       <Container>
@@ -75,9 +77,7 @@ const FeaturesProduct: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4">
-              {[...new Array(8)].map((_, index) => (
-                <Product key={index}/>
-              ))}
+                <Product status={{isPending, isError, data, error}}/>
             </div>
           </div>
         </div>

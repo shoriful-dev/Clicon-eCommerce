@@ -4,11 +4,10 @@ import Container from '../../CommonComponents/Container';
 import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
 import Product from '../../CommonComponents/Product';
-import { useQuery, useQueryClient } from '@tanstack/react-query';
+import { useQuery } from '@tanstack/react-query';
 import { GetFeatureProduct } from '../../../api/FeatureProduct';
 
 const FeaturesProduct: React.FC = () => {
-  const queryClient = useQueryClient();
   const [featuresProductList] = useState<featureProduct[]>([
     {
       id: 1,
@@ -45,7 +44,7 @@ const FeaturesProduct: React.FC = () => {
     <>
       <Container>
         <div className="grid grid-cols-[1fr_3.7fr] h-[716px] gap-x-6">
-          <div className='h-full'>
+          <div className="h-full">
             <img
               src={assets.FeatureProductLeft}
               alt="Feature Left Banner Image"
@@ -77,7 +76,14 @@ const FeaturesProduct: React.FC = () => {
               </div>
             </div>
             <div className="grid grid-cols-4 gap-4">
-                <Product status={{isPending, isError, data, error}}/>
+              <Product
+                status={{
+                  isPending,
+                  isError,
+                  data: { products: data.products},
+                  error,
+                }}
+              />
             </div>
           </div>
         </div>

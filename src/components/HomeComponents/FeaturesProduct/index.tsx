@@ -35,9 +35,10 @@ const FeaturesProduct: React.FC = () => {
       slug: 'tv',
     },
   ]);
-  const query = useQuery({ queryKey: ['featureProducts'], queryFn: () => {
-
-  } });
+  const query = useQuery({ queryKey: ['featureProduct'], queryFn: async () => {
+    return await fetch('https://dummyjson.com/products').then((res) => res.json());
+  }});
+  console.log(query.data)
   return (
     <>
       <Container>

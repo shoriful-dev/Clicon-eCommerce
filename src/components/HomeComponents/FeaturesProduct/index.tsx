@@ -5,7 +5,7 @@ import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
 import Product from '../../CommonComponents/Product';
 import { useQuery } from '@tanstack/react-query';
-import { GetFeatureProduct } from '../../../api/FeatureProduct';
+import { GetFeaturesProduct } from '../../../api/FeatureProduct';
 
 const FeaturesProduct: React.FC = () => {
   const [featuresProductList] = useState<featureProduct[]>([
@@ -37,7 +37,7 @@ const FeaturesProduct: React.FC = () => {
   ]);
   const { isPending, isError, data, error } = useQuery({
     queryKey: ['featureProduct'],
-    queryFn: GetFeatureProduct,
+    queryFn: GetFeaturesProduct,
   });
   console.log(data);
   return (
@@ -80,7 +80,7 @@ const FeaturesProduct: React.FC = () => {
                 status={{
                   isPending,
                   isError,
-                  data: { products: data.products},
+                  data: { products: data?.products},
                   error,
                 }}
               />

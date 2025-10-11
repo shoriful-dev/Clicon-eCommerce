@@ -2,6 +2,7 @@ import React from 'react';
 import { assets } from '../../helpers/AssetProvider';
 import { icons } from '../../helpers/IconsProvider';
 import ProductSkeleton from '../Skeletion/ProductSkeleton';
+import type { productDataType } from '../../types/productapidata';
 
 type fearuresProductProp = {
   status: { isPending: boolean, isError: boolean, data: any, error: any };
@@ -14,11 +15,11 @@ const Product = ({ status }: fearuresProductProp) => {
   }
   return (
     <div className="h-full grid grid-cols-4 gap-4">
-      {status.data.products.slice(0, 8).map((item: any) => (
+      {status.data.products.slice(0, 8).map((item: productDataType) => (
         <div className="max-w-[300px] p-4! border border-gray-100 rounded relative shadow">
           <div className="flex items-center justify-center">
             <img
-              src={assets.mobile}
+              src={item.images[0] || assets.mobile}
               alt="Mobile"
               className="max-w-[202px] max-h-[172px] object-cover"
             />
@@ -31,12 +32,17 @@ const Product = ({ status }: fearuresProductProp) => {
                   <span className="text-primary-500">{icons.fillStar}</span>
                 ))}
               </div>
-              <span className="text-gray-500 body-tiny-600">(48)</span>
+              <span className="text-gray-500 body-tiny-600">
+                ({item.reviews.length})
+              </span>
             </div>
             {/* product details */}
-            <h1 className="body-xl-400 text-gray-900 mb-1!">Galexy S21 5G</h1>
+            <h1 className="body-xl-400 text-gray-900 mb-1! truncate">
+              {item.title || 'Product Name'}
+            </h1>
             <p className="body-large-400 text-gray-900 truncate mb-1!">
-              TOZO T6 True Wireless Earbuds Bluetooth Headphon...
+              {item.description ||
+                'TOZO T6 True Wireless Earbuds Bluetooth Headphon...'}
             </p>
             {/* price */}
             <div className="flex items-center gap-x-2">

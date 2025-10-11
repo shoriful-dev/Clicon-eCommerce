@@ -7,16 +7,16 @@ const ProductSkeleton: React.FC = () => {
         {[...new Array(8)].map((_, i) => (
           <div
             key={i}
-            className="max-w-[300px] p-4! animate-pulse border border-gray-100 rounded relative shadow"
+            className="max-w-[300px] p-[22px]! animate-pulse border border-gray-100 rounded relative shadow"
           >
             {/* Image Placeholder */}
             <div className="flex items-center justify-center">
-              <div className="bg-gray-200 rounded w-[202px] h-[172px]" />
+              <div className="bg-gray-200 rounded w-[250px] h-[172px]" />
             </div>
 
-            <div className="pt-4!">
+            <div className="pt-4! space-y-2">
               {/* Rating Placeholder */}
-              <div className="flex items-center gap-x-2 mb-2!">
+              <div className="flex items-center gap-x-2 mb-4!">
                 <div className="flex gap-1">
                   {[1, 2, 3, 4].map(item => (
                     <div key={item} className="w-4 h-4 bg-gray-200 rounded" />

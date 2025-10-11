@@ -43,7 +43,7 @@ const FeaturesProduct: React.FC = () => {
   return (
     <>
       <Container>
-        <div className="grid grid-cols-[1fr_3.7fr] h-[716px] gap-x-6">
+        <div className="grid grid-cols-[1fr_3.7fr] h-[716px] gap-x-6 mb-20!">
           <div className="h-full">
             <img
               src={assets.FeatureProductLeft}

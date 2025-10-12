@@ -15,7 +15,7 @@ const Product = ({ status }: fearuresProductProp) => {
   }
   return (
     <div className="h-full grid grid-cols-4 gap-4">
-      {status.data.products.slice(0, 8).map((item: productDataType) => (
+      {status.data?.products?.slice(0, 8).map((item: productDataType) => (
         <div className="max-w-[300px] p-4! border border-gray-100 rounded relative shadow">
           <div className="flex items-center justify-center">
             <img

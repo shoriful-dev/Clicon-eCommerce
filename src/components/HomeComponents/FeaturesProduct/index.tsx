@@ -1,45 +1,39 @@
 import React, { useState } from 'react';
 import { assets } from '../../../helpers/AssetProvider';
 import Container from '../../CommonComponents/Container';
-import type { featureProduct } from '../../../types/fearuresProduct';
 import { icons } from '../../../helpers/IconsProvider';
 import Product from '../../CommonComponents/Product';
 import { useQuery } from '@tanstack/react-query';
 import { GetFeaturesProduct } from '../../../api/FeatureProduct';
+import { categoryWiseData, getCategoryData } from '../../../api/Category';
 
 const FeaturesProduct: React.FC = () => {
-  const [featuresProductList] = useState<featureProduct[]>([
-    {
-      id: 1,
-      name: 'All Product',
-      slug: 'all-product',
-    },
-    {
-      id: 2,
-      name: 'Smart Phone',
-      slug: 'smart-phone',
-    },
-    {
-      id: 3,
-      name: 'Laptop',
-      slug: 'laptop',
-    },
-    {
-      id: 4,
-      name: 'Headphone',
-      slug: 'headphone',
-    },
-    {
-      id: 5,
-      name: 'TV',
-      slug: 'tv',
-    },
-  ]);
+  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+
   const { isPending, isError, data, error } = useQuery({
     queryKey: ['featureProduct'],
     queryFn: GetFeaturesProduct,
   });
-  console.log(data);
+
+  const { data: categoryData } = useQuery({
+    queryKey: ['category'],
+    queryFn: getCategoryData,
+  });
+
+  const {
+    data: categoryProduct,
+    isError: categoryError,
+    isPending: categoryPending,
+    error: categoryErrorData,
+  } = useQuery({
+    queryKey: ['categoryWiseProduct', selectedCategory],
+    queryFn: () => categoryWiseData(selectedCategory),
+    enabled: !!selectedCategory,
+  });
+
+  const handleCategory = (item: string) => {
+    setSelectedCategory(item);
+  };
   return (
     <>
       <Container>
@@ -52,17 +46,18 @@ const FeaturesProduct: React.FC = () => {
             />
           </div>
           <div className="grid grid-rows-[8%_90%] rounded! h-full">
-            <div className="grid grid-cols-[1fr_1fr]">
+            <div className="grid grid-cols-[1fr_4fr]">
               <h2 className="heading3 text-gray-900">Featured Products</h2>
-              <div className="justify-self-end">
+              <div className="justify-self-end mt-1!">
                 <div className="flex items-center gap-x-8">
                   <ul className="flex items-center gap-x-4">
-                    {featuresProductList?.map(item => (
+                    {categoryData?.slice(0, 7).map((item, index) => (
                       <li
-                        key={item.id}
-                        className="body-small-400 text-gray-600 customStyle"
+                        onClick={() => handleCategory(item)}
+                        key={index}
+                        className="text-gray-600 capitalize body-medium-500 customStyle"
                       >
-                        {item.name}
+                        {item}
                       </li>
                     ))}
                   </ul>
@@ -77,12 +72,21 @@ const FeaturesProduct: React.FC = () => {
             </div>
             <div>
               <Product
-                status={{
-                  isPending,
-                  isError,
-                  data: { products: data?.products},
-                  error,
-                }}
+                status={
+                  selectedCategory === 'all'
+                    ? {
+                        isPending,
+                        isError,
+                        data: { products: data?.products },
+                        error,
+                      }
+                    : {
+                        isPending: categoryPending,
+                        isError: categoryError,
+                        data: { products: categoryProduct?.products },
+                        error: categoryErrorData,
+                      }
+                }
               />
             </div>
           </div>

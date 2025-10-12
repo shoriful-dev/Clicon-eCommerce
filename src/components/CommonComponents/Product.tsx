@@ -3,6 +3,7 @@ import { assets } from '../../helpers/AssetProvider';
 import { icons } from '../../helpers/IconsProvider';
 import ProductSkeleton from '../Skeletion/ProductSkeleton';
 import type { productDataType } from '../../types/productapidata';
+import { Discount } from '../../helpers/Discount';
 
 type fearuresProductProp = {
   status: { isPending: boolean, isError: boolean, data: any, error: any };
@@ -47,9 +48,9 @@ const Product = ({ status }: fearuresProductProp) => {
             {/* price */}
             <div className="flex items-center gap-x-2">
               <span className="line-through text-gray-400 body-large-600">
-                ৳ 1,999
+                $ {Discount(item.price, item.discountPercentage).toFixed(2)}
               </span>
-              <span className="text-secondary-500 body-large-600">৳ 2,999</span>
+              <span className="text-secondary-500 body-large-600">$ {item.price}</span>
             </div>
           </div>
           {/* hot deal */}

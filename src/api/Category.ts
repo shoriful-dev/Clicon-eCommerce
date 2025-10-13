@@ -21,7 +21,6 @@ export const categoryWiseData = async (
     ).then((res) => res.json());
   } catch (error) {
     console.log("error from category function", error);
-    // Return a default value or throw to satisfy the return type
     throw error;
   }
 };

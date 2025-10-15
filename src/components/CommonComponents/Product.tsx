@@ -4,6 +4,7 @@ import { icons } from '../../helpers/IconsProvider';
 import ProductSkeleton from '../Skeletion/ProductSkeleton';
 import type { productDataType } from '../../types/productapidata';
 import { Discount } from '../../helpers/Discount';
+import Star from './Star';
 
 type fearuresProductProp = {
   status: { isPending: boolean, isError: boolean, data: any, error: any };
@@ -32,12 +33,10 @@ const Product = ({ status }: fearuresProductProp) => {
             {/* rating */}
             <div className="flex items-center gap-x-2">
               <div className="">
-                {[1, 2, 3, 4].map(() => (
-                  <span className="text-primary-500">{icons.fillStar}</span>
-                ))}
+                <Star rating={item.rating}/>
               </div>
               <span className="text-gray-500 body-tiny-600">
-                ({item.reviews.length})
+                ({item.rating})
               </span>
             </div>
             {/* product details */}

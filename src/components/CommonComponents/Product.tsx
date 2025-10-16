@@ -87,3 +87,4 @@ const Product = ({ status }: fearuresProductProp) => {
 };
 
 export default React.memo(Product);
+

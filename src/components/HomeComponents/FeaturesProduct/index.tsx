@@ -10,7 +10,7 @@ import { categoryWiseData, getCategoryData } from '../../../api/Category';
 const FeaturesProduct: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
 
-  const { isPending, isError, data, error } = useQuery({
+  const { isPending, isError, data, error, refetch } = useQuery({
     queryKey: ['featureProduct'],
     queryFn: GetFeaturesProduct,
   });
@@ -25,6 +25,7 @@ const FeaturesProduct: React.FC = () => {
     isError: categoryError,
     isPending: categoryPending,
     error: categoryErrorData,
+    refetch: categoryRefetch,
   } = useQuery({
     queryKey: ['categoryWiseProduct', selectedCategory],
     queryFn: () => categoryWiseData(selectedCategory),
@@ -79,12 +80,14 @@ const FeaturesProduct: React.FC = () => {
                         isError,
                         data: { products: data?.products },
                         error,
+                        refetch,
                       }
                     : {
                         isPending: categoryPending,
                         isError: categoryError,
                         data: { products: categoryProduct?.products },
                         error: categoryErrorData,
+                        refetch: categoryRefetch
                       }
                 }
               />

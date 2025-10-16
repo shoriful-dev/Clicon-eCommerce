@@ -1,13 +1,13 @@
 import React from 'react';
 import { assets } from '../../helpers/AssetProvider';
-import { icons } from '../../helpers/IconsProvider';
 import ProductSkeleton from '../Skeletion/ProductSkeleton';
 import type { productDataType } from '../../types/productapidata';
 import { Discount } from '../../helpers/Discount';
 import Star from './Star';
+import FeatureProductError from '../../Error/FeatureProductError';
 
 type fearuresProductProp = {
-  status: { isPending: boolean, isError: boolean, data: any, error: any };
+  status: { isPending: boolean, isError: boolean, data: any, error: any, refetch: () => void };
 };
 
 const Product = ({ status }: fearuresProductProp) => {
@@ -16,7 +16,9 @@ const Product = ({ status }: fearuresProductProp) => {
     return <ProductSkeleton/>
   }
   if(status.isError) {
-    return <p>{status.error.message}</p>
+    return (
+      <FeatureProductError message={status.error} onRetry={status.refetch} />
+    );
   }
   return (
     <div className="h-full grid grid-cols-4 gap-4">
@@ -35,8 +37,8 @@ const Product = ({ status }: fearuresProductProp) => {
               <div className="">
                 <Star rating={item.rating}/>
               </div>
-              <span className="text-gray-500 body-tiny-600">
-                ({item.rating})
+              <span className="text-gray-500 body-xl-300">
+                ({item.rating.toFixed(1)})
               </span>
             </div>
             {/* product details */}

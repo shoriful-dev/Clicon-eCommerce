@@ -30,6 +30,9 @@ const Product = ({ status }: fearuresProductProp) => {
               alt="Mobile"
               className="max-w-[202px] max-h-[172px] object-cover"
             />
+            <div className="">
+                <span>{}</span>
+            </div>
           </div>
           <div className="bg-gray-00 pt-4!">
             {/* rating */}
